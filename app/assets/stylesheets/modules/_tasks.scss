@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+a{
+  display: block;
+  margin:20px 0 20px 20px ;
+  
+  font-weight: bold;
+}
+
+
+.header{
+  height: 100px;
+  width: 100vw;
+  background-color: #3f3f3f;
+  border-bottom: 1px solid #595959;
+  position: fixed;
+  z-index: 10;
+  
+  &_box{
+    display:flex;
+    position: relative;
+
+    &_logo{
+      margin:0 0 0 20px;
+      color:#f0ffff;
+      font-size: 70px;
+      font-weight: bold;
+    }
+    &_user{
+      font-size: 20px;
+      color:white;
+      position: absolute;
+      bottom: 10px;
+      left: 260px;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    .fa-user-cog{
+      cursor: pointer;
+    }
+    .fa-users{
+      cursor: pointer;
+    }
+    .fa-users-cog{
+      cursor: pointer;
+    }
+    
+    &_group{
+      position: absolute;
+      bottom: 10px;
+      left: 450px;
+      font-size: 25px;
+      color: white;
+      font-weight: bold;
+      margin-left: 30px;
+    }
+
+  }  
+}
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  .side-bar {
+    width: 15%;
+    background-image: url("groupee.jpg");
+    background-size: cover;
+    .groups {
+      margin-top: 160px;
+      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      margin-left: 25px;
+    }
+  }
+  .main-tasks {
+    width: 85%;
+    margin-top: 100px;
+    height: 87.5%;
+    background-image: url("tasks.jpg");
+    background-size: cover;
+    
+    .contents{
+      width: 95%;
+      height: calc(100vh - 300px);
+      margin: 40px;
+      overflow: scroll;
+      
+      &_content{
+        padding: 30px;
+        width: 94%;
+        height: 4.2%;
+        background-color: #f0f8ff;
+        border-radius: 10px;
+        opacity: 0.85;
+        margin-bottom: 1px;
+        font-size: 25px;
+        display: flex;
+        
+        .content1 {
+          position: relative;
+          margin-right: 15px;
+          bottom: 8px;
+        }
+        &_task{
+          position: relative;
+          bottom: 15px;
+        }
+        
+        
+
+        &_user{
+          font-size: 15px;
+          margin-right: 10px;
+          position: relative;
+          bottom: 3px;
+          color: gray;
+        }
+        &_time{
+          font-size: 15px;
+          position: relative;
+          bottom: 3px;
+          color: gray;
+        }
+
+        .fa-trash{
+          color:gray;
+          cursor: pointer;
+          position: relative;
+          bottom: 10px;
+          margin:0 15px 0 15px;
+          size: 5px;
+          
+        }
+        
+      }
+    }
+        
+  }
+
+    .form {
+      height: 15%;
+      display: flex;
+      margin-top: 57px;
+      background-color: #3f3f3f;
+      z-index: 9;
+      
+
+      .new-message{
+        width: 100%;
+        display: flex;
+        margin-left: 40px;
+        margin-top: 25px;
+        .input-box {
+          width: 89%;
+          &__text{
+            width: 97%;
+            height: 50px;
+            border-radius: 10px;
+            background-color:#dcdcdc;
+          }
+        }  
+        .message-create__btn__send{
+          background-color: #add8e6;
+          height: 50px;
+          width: 100px;
+          cursor: pointer;
+          border-radius: 10px;
+        }      
+      }
+    }   
+}
