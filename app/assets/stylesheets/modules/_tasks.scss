@@ -21,6 +21,7 @@ a{
   &_box{
     display:flex;
     position: relative;
+    font-size: 20px;
 
     &_logo{
       margin:0 0 0 20px;
@@ -37,20 +38,31 @@ a{
       font-weight: bold;
       font-size: 25px;
     }
-    .fa-user-cog{
+    .fa-user-cog.icon{
       cursor: pointer;
+      position: relative;
+      left: 300px;
+      top: 40px;
+      color:#ffa500;
     }
-    .fa-users{
+    .fa-users.icon{
       cursor: pointer;
+      position: relative;
+      position: relative;
+      left:290px;
+      top: 40px;
+      color:#ffa500;
+     
     }
     .fa-users-cog{
       cursor: pointer;
+      position: relative;
     }
     
     &_group{
       position: absolute;
       bottom: 10px;
-      left: 450px;
+      left: 600px;
       font-size: 25px;
       color: white;
       font-weight: bold;
