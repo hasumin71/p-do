@@ -2,19 +2,11 @@
   box-sizing: border-box;
 }
 
-a{
-  display: block;
-  margin:20px 0 20px 20px ;
-  
-  font-weight: bold;
-}
-
-
 .header{
   height: 100px;
   width: 100vw;
   background-color: #3f3f3f;
-  border-bottom: 1px solid #595959;
+  border-bottom: 3px solid orange;
   position: fixed;
   z-index: 10;
   
@@ -24,31 +16,28 @@ a{
     font-size: 20px;
 
     &_logo{
-      margin:0 0 0 20px;
+      margin: 10px 20px 0 25px; 
       color:#f0ffff;
-      font-size: 70px;
+      font-size: 55px;
       font-weight: bold;
     }
     &_user{
       font-size: 20px;
       color:white;
       position: absolute;
-      bottom: 10px;
-      left: 260px;
+      left: 230px;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 15px;
+      bottom: 10px;
     }
     .fa-user-cog.icon{
       cursor: pointer;
-      position: relative;
       left: 300px;
       top: 40px;
       color:#ffa500;
     }
     .fa-users.icon{
       cursor: pointer;
-      position: relative;
-      position: relative;
       left:290px;
       top: 40px;
       color:#ffa500;
@@ -57,13 +46,14 @@ a{
     .fa-users-cog{
       cursor: pointer;
       position: relative;
+      color:#ffa500;
     }
     
     &_group{
       position: absolute;
       bottom: 10px;
       left: 600px;
-      font-size: 25px;
+      font-size: 15px;
       color: white;
       font-weight: bold;
       margin-left: 30px;
@@ -75,24 +65,31 @@ a{
   height: 100vh;
   width: 100vw;
   display: flex;
+  background-image: url("tasks.jpg");
+  background-size: cover;
   .side-bar {
     width: 15%;
     background-image: url("groupee.jpg");
     background-size: cover;
+    border-right: 3px solid white;
+    
     .groups {
-      margin-top: 160px;
-      color: black;
-      font-size: 15px;
-      font-weight: bold;
+      position: relative;
       margin-left: 25px;
+      top:100px;
+      margin-top: 15px;
+      a{
+        text-decoration: none;
+        color: white ;
+        font-size: 15px;
+        font-weight: bold;
+      }
     }
   }
   .main-tasks {
     width: 85%;
     margin-top: 100px;
     height: 87.5%;
-    background-image: url("tasks.jpg");
-    background-size: cover;
     
     .contents{
       width: 95%;
@@ -109,6 +106,7 @@ a{
         opacity: 0.85;
         margin-bottom: 1px;
         font-size: 25px;
+        font-weight: bold;
         display: flex;
         
         .content1 {
@@ -119,6 +117,7 @@ a{
         &_task{
           position: relative;
           bottom: 15px;
+
         }
         
         

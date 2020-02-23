@@ -1,19 +1,5 @@
-.header
-  .header_box
-    .header_box_logo
-      P/Do
-    .header_box_user  
-      = current_user.name
-    .user-cog  
-      = link_to edit_user_path(current_user) do
-        = icon('fas', 'user-cog', class: 'icon')
-    .users 
-      = link_to do
-        = icon('fas', 'users', class: 'icon') 
-    .header_box_group
-      鮫肌鳥肌   
-      %i.fa.fa-users-cog
 .wrapper
+  = render "header"
   = render "side_bar"
   = render "main_tasks"
   
