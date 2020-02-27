@@ -5,10 +5,10 @@
 .header{
   height: 100px;
   width: 100vw;
-  background-color: #3f3f3f;
   border-bottom: 3px solid orange;
   position: fixed;
   z-index: 10;
+  background-color:rgba(63,63,63,0.8);
   
   &_box{
     display:flex;
@@ -16,57 +16,64 @@
     font-size: 20px;
 
     &_logo{
-      margin: 10px 20px 0 25px; 
-      color:#f0ffff;
-      font-size: 55px;
+      margin: 5px 20px 0 5px; 
+      font-style: italic;
+      color: orange;
+      text-shadow:2px 2px 0 orange, -2px -2px 0 orange,
+              -2px 2px 0 orange, 2px -2px 0 orange,
+              0px 2px 0 orange,  0-2px 0 orange,
+              -2px 0 0 orange, 2px 0 0 orange;
+      font-size: 65px;
       font-weight: bold;
     }
-    &_user{
-      font-size: 20px;
+    &_both{
+      width : 80%;
+      display: flex;
+      position: absolute;
+      bottom: 10px;
+      left: 255px;
       color:white;
-      position: absolute;
-      left: 230px;
-      font-weight: bold;
       font-size: 15px;
-      bottom: 10px;
+      &_user{
+        font-size: 20px;
+        position: absolute;
+        left: 230px;
+        font-weight: bold;
+        bottom: 10px;
+      }
+      .fa-user-cog.icon{
+        cursor: pointer;
+        left: 300px;
+        top: 40px;
+        color:#ffa500;
+        margin-left: 7px;
+      }
+      .fa-user-cog.icon:hover{
+        color:#ff7f50;
+      }
+      .fa-users.icon{
+        cursor: pointer;
+        left:290px;
+        top: 40px;
+        color:#ffa500;
+      }  
+      .fa-users.icon:hover{
+        color:#ff7f50;
+      }
+      .fa-angle-double-right.icon{
+        margin:0 15px 0 15px;
+        }
+      
     }
-    .fa-user-cog.icon{
-      cursor: pointer;
-      left: 300px;
-      top: 40px;
-      color:#ffa500;
-    }
-    .fa-users.icon{
-      cursor: pointer;
-      left:290px;
-      top: 40px;
-      color:#ffa500;
-     
-    }
-    .fa-users-cog{
-      cursor: pointer;
-      position: relative;
-      color:#ffa500;
-    }
-    
-    &_group{
-      position: absolute;
-      bottom: 10px;
-      left: 600px;
-      font-size: 15px;
-      color: white;
-      font-weight: bold;
-      margin-left: 30px;
-    }
-
   }  
 }
 .wrapper {
   height: 100vh;
   width: 100vw;
   display: flex;
-  background-image: url("tasks.jpg");
+  background-image: url("startup.jpg");
   background-size: cover;
+  position:relative;
   .side-bar {
     width: 15%;
     background-image: url("groupee.jpg");
@@ -74,34 +81,82 @@
     border-right: 3px solid white;
     
     .groups {
-      position: relative;
-      margin-left: 25px;
-      top:100px;
-      margin-top: 15px;
+      // position: relative;
+      height:80%;
+      width: 80%;
+      margin-top: 115px;
+      margin-left: 30px;
       a{
         text-decoration: none;
-        color: white ;
+        color: black ;
         font-size: 15px;
         font-weight: bold;
       }
+      .group{
+        margin-bottom: 10px;
+        color:black;
+        &_task{
+          color:#ff7f50;
+        }
+        &_name:hover{
+          color: gray;
+        }
+      }  
+      
     }
   }
   .main-tasks {
     width: 85%;
     margin-top: 100px;
     height: 87.5%;
-    
+
+    .fa-angle-double-right.icon{
+      position:relative;
+      top: 3px;
+      margin-right: 15px;
+    }
+    .main_tasks_group{
+      position: relative;
+      top: 10px;
+      left: 40px;
+      color: white;
+      font-size: 15px;
+      display:flex;
+      
+      &_member{
+        margin-left: 10px;
+        background-color:rgba(255,165,0,0.8);
+        color:white;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 0 3px 0 3px;
+      
+
+      }
+    }
+
+
+
+    .fa-users-cog{
+      cursor: pointer;
+      position: relative;
+      color:#ffa500;
+      margin-left: 7px;
+    }
+    .fa-users-cog:hover{
+      color:#ff7f50;
+    }
     .contents{
       width: 95%;
       height: calc(100vh - 300px);
-      margin: 40px;
+      margin: 25px 40px 40px 40px;
       overflow: scroll;
       
       &_content{
         padding: 30px;
-        width: 94%;
+        width: 99%;
         height: 4.2%;
-        background-color: #f0f8ff;
+        background-color: rgba(255, 255, 255,0.9);
         border-radius: 10px;
         opacity: 0.85;
         margin-bottom: 1px;
@@ -128,11 +183,13 @@
           position: relative;
           bottom: 3px;
           color: gray;
+          margin-left: 10px;
         }
         &_time{
           font-size: 15px;
           position: relative;
           bottom: 3px;
+          margin-left: 5px;
           color: gray;
         }
 
@@ -140,12 +197,14 @@
           color:gray;
           cursor: pointer;
           position: relative;
-          bottom: 10px;
-          margin:0 15px 0 15px;
+          bottom: 1px;
+          margin:0 10px 0 10px;
           size: 5px;
           
         }
-        
+        .fa-trash:hover{
+          color:#add8e6;
+        }
       }
     }
         
@@ -153,33 +212,40 @@
 
     .form {
       height: 15%;
+      width: 85%;
       display: flex;
-      margin-top: 57px;
-      background-color: #3f3f3f;
-      z-index: 9;
+      background-color:rgba(63,63,63,0.8);
+      z-index: 10;
+      position: fixed;
+      bottom: 0;
+      position:absolute;
       
-
-      .new-message{
-        width: 100%;
+      .new_task{
+        width: 95%;
         display: flex;
         margin-left: 40px;
-        margin-top: 25px;
-        .input-box {
+        margin-top: 35px;
+        
+        .form__message{
           width: 89%;
-          &__text{
-            width: 97%;
-            height: 50px;
-            border-radius: 10px;
-            background-color:#dcdcdc;
-          }
-        }  
+          height: 50px;
+          border-radius: 10px;
+          border: 10px solid white;
+        }
+      }  
         .message-create__btn__send{
           background-color: #add8e6;
           height: 50px;
           width: 100px;
+          margin-left: 20px;
           cursor: pointer;
           border-radius: 10px;
+          font-weight: bold;
+          color: gray;
         }      
-      }
+        .message-create__btn__send:hover{
+          color: #87cefa;
+        }
+      
     }   
 }

@@ -1,8 +1,11 @@
 .side-bar
-  - current_user.groups.each do |group|
-    .groups
+  .groups
+    - current_user.groups.each do |group|
       .group
-        = link_to '#' do
-          = group.name
+        = link_to group_tasks_path(group) do
+          .group_name
+            = group.name
+          .group_task    
+            = group.show_last_task
+            
 
-   
