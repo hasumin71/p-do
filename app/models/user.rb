@@ -8,6 +8,4 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users
   has_many :tasks
   validates :name, presence: true, uniqueness: true
-  
-        
 end

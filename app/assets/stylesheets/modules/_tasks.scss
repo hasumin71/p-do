@@ -16,15 +16,17 @@
     font-size: 20px;
 
     &_logo{
-      margin: 5px 20px 0 5px; 
+      margin: 10px 20px 0 5px; 
       font-style: italic;
+      font-family: "Holtwood One SC";
+      transform: scale(1 1.5);
       color: orange;
-      text-shadow:2px 2px 0 orange, -2px -2px 0 orange,
-              -2px 2px 0 orange, 2px -2px 0 orange,
-              0px 2px 0 orange,  0-2px 0 orange,
-              -2px 0 0 orange, 2px 0 0 orange;
-      font-size: 65px;
-      font-weight: bold;
+      text-shadow:1px 1px 0 orange, -1px -1px 0 orange,
+              -1px 1px 0 orange, 1px -1px 0 orange,
+              0px 1px 0 orange,  0 -1px 0 orange,
+              -1px 0 0 orange, 1px 0 0 orange;
+      font-size: 55px;
+      // font-weight: bold;
     }
     &_both{
       width : 80%;
@@ -64,6 +66,13 @@
         margin:0 15px 0 15px;
         }
       
+    }
+    &_right {
+      font-style: italic;
+      color: gray;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 50px 15px 0 auto;
     }
   }  
 }
@@ -130,7 +139,13 @@
         font-weight: bold;
         border-radius: 5px;
         padding: 0 3px 0 3px;
-      
+        a{
+          color:white;
+          text-decoration: none;
+        }
+        a:hover{
+          color:#ff7f50;
+        }
 
       }
     }
@@ -153,9 +168,9 @@
       overflow: scroll;
       
       &_content{
-        padding: 30px;
+        // padding: 30px;
         width: 99%;
-        height: 4.2%;
+        // height: 4.2%;
         background-color: rgba(255, 255, 255,0.9);
         border-radius: 10px;
         opacity: 0.85;
@@ -170,9 +185,7 @@
           bottom: 8px;
         }
         &_task{
-          position: relative;
-          bottom: 15px;
-
+          margin: 10px 0 10px 15px;
         }
         
         
@@ -181,14 +194,14 @@
           font-size: 15px;
           margin-right: 10px;
           position: relative;
-          bottom: 3px;
+          top: 23px;
           color: gray;
           margin-left: 10px;
         }
         &_time{
           font-size: 15px;
           position: relative;
-          bottom: 3px;
+          top: 23px;
           margin-left: 5px;
           color: gray;
         }
@@ -198,7 +211,7 @@
           cursor: pointer;
           position: relative;
           bottom: 1px;
-          margin:0 10px 0 10px;
+          margin:0 5px 0 5px;
           size: 5px;
           
         }

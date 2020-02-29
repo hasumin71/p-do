@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
+ 
+  
   def show
+
     @user = User.find(params[:id])
-    @tasks = @user.tasks
-  end  
+    tasks = @user.tasks 
+    @tasks = []
+    tasks.each do |t|
+      if t.group_id.to_s == params[:group_id].to_s
+        @tasks << t
+      end      
+    end  
+    return @tasks
+  end    
   
   def edit
   end
@@ -21,4 +31,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 
+  def set_group
+    @group = Group.find(params[:id])
+  end
 end

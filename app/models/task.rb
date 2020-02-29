@@ -4,3 +4,5 @@ class Task < ApplicationRecord
   
   validates :content, presence: true
 end
+
+# length: {maximum: 12 }

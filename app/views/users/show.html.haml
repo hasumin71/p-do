@@ -1,54 +1,32 @@
-.header
-  .header_box
-    .header_box_logo
-      P@do
-    .header_box_both
-      .header_box_user  
-        = current_user.name
-        = link_to edit_user_path(current_user) do
-          = icon('fas', 'user-cog', class: 'icon')
-        = link_to new_group_path(current_user) do
-          = icon('fas', 'users', class: 'icon') 
-        = icon('fas', 'angle-double-right', class: 'icon')
-      
+= render "tasks/header"
 .wrapper
-  .side-bar
-  .groups
-    - current_user.groups.each do |group|
-      .group
-        = link_to group_tasks_path(group) do
-          .group_name
-            = group.name
-          .group_task    
-            = group.show_last_task
-
+  = render "tasks/side_bar"
   .main-tasks 
-  .main_tasks_group
-    = icon('fas', 'angle-double-right', class: 'icon')
-    = @group.name
-    = link_to edit_group_path(@group) do
-      = icon('fas', 'users-cog', class: 'icon')
-    .main_tasks_group_member
-      Members :
-      - @group.users.each do |user|
-        = link_to user.name, "users/#{user.id}", class:""
+    .main_tasks_group
+      = icon('fas', 'angle-double-right', class: 'icon')
+      -# = @group.name
+      -# = link_to edit_group_path(@group) do
+      -# = icon('fas', 'users-cog', class: 'icon')
+      .main_tasks_group_member
+        Member :
+        = @user.name
+        -# - @group.users.each do |user|
+          = link_to user.name, "users/#{user.id}", class:""
         -# = user.name
         
-  .contents
-    - @tasks.each do |task|
-      .contents_content
-        .contents_content_task 
-          = task.content    
-          -if current_user.id == task.user_id  
-            = link_to "","tasks/#{task.id}", method: :delete, class:"fa fa-trash"
-        .contents_content_user
-          = task.user.name
-        .contents_content_time
-          = task.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .form
-    = form_for [@group, @task] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      = f.submit 'Send', class: 'message-create__btn__send'          
-            
+    .contents
+      - @tasks.each do |task|
+        .contents_content
+          .contents_content_task 
+            = task.content    
+            -if current_user.id == task.user_id  
+              = link_to "","tasks/#{task.id}", method: :delete, class:"fa fa-trash"
+          .contents_content_user
+            = task.user.name
+          .contents_content_time
+            = task.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    -# .form
+    -#   -# = form_for [@group, @task] do |f|
+    -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    -#     = f.submit 'Send', class: 'message-create__btn__send'
 
- 
