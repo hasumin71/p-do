@@ -9,7 +9,9 @@ class TasksController < ApplicationController
   def create
     @task = @group.tasks.new(task_params)
     if @task.save
-      redirect_to group_tasks_path(@group), notice: 'メッセージが送信されました'
+      respond_to do |format|
+        format.json
+      end   
     else
       @tasks = @group.tasks.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
@@ -21,7 +23,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
     redirect_to group_tasks_path
-    end  
+  end  
   private
 
   def task_params

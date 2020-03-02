@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module PDo
   class Application < Rails::Application
+    config.time_zone = 'Tokyo'
     # Initialize configuration defaults for originally generated Rails version.
     config.i18n.default_locale = :ja
     config.generators do |g|

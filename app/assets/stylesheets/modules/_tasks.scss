@@ -2,12 +2,17 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration:none;
+}
+
 .header{
   height: 100px;
   width: 100vw;
   border-bottom: 3px solid orange;
   position: fixed;
   z-index: 10;
+  top: 0;
   background-color:rgba(63,63,63,0.8);
   
   &_box{
@@ -58,13 +63,15 @@
         left:290px;
         top: 40px;
         color:#ffa500;
+        
       }  
       .fa-users.icon:hover{
         color:#ff7f50;
       }
       .fa-angle-double-right.icon{
         margin:0 15px 0 15px;
-        }
+      }
+     
       
     }
     &_right {
@@ -185,7 +192,7 @@
           bottom: 8px;
         }
         &_task{
-          margin: 10px 0 10px 15px;
+          margin: 10px 0 10px 20px;
         }
         
         

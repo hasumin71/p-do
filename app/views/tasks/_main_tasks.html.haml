@@ -14,6 +14,8 @@
     - @tasks.each do |task|
       .contents_content
         .contents_content_task 
+          -if current_user.id == task.user_id 
+            -# = check_box :task, :done, {class: "check_box"}, true, false
           = task.content    
           -if current_user.id == task.user_id  
             = link_to "","tasks/#{task.id}", method: :delete, class:"fa fa-trash"
