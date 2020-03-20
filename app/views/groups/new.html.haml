@@ -1,3 +1,6 @@
-.chat-group-form
-  %h1 新規チャットグループ
-  = render partial: 'form', locals: { group: @group }
+.wrapper  
+  .chat-group-form
+    %h1 
+      %span SURU 
+      %label.new_group new_group
+    = render partial: 'form', locals: { group: @group }

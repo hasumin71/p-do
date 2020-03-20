@@ -1,10 +1,10 @@
 $(function(){
+  
     function buildHTML(task){
       var html = 
-       `<div class="contents_content">
+       `<div class="contents_content" data-task-id="${task.id}">
           <div class="contents_content_task">
             ${task.content}  
-            <a class="fa fa-trash" rel="nofollow" data-method="delete" href="tasks/${task.id}"></a>
           </div>  
           <div class="contents_content_user">  
             ${task.user_name}
@@ -12,42 +12,82 @@ $(function(){
           <div class="contents_content_time">
             ${task.created_at} 
           </div>
+          <a class="fa fa-trash" rel="nofollow" data-method="delete" href="tasks/${task.id}"></a>
         </div>`  
-      return html;
-
-      
+      return html; 
     }
   
 
 
   $('#new_task').on('submit', function(e){
-    console.log('hoge');
-    e.preventDefault()
+    e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action');
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
+    var url = $(this).attr('action')
+    
+      $.ajax({
+        url: url,
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
       .done(function(data){
+      
         var html = buildHTML(data);
         $('.contents').append(html);  
-        $('.tasks').animate({scrollTop: $('.tasks')[0].scrollHeight});       
+        $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight});       
         $('form')[0].reset();
-
+        
       })
 
       .fail(function(){
         alert('error');
-      });
+      })
       return false;
-      
   })
 
+
+  $(function(){
+    var btn = $('button');
+    btn.click(function(){
+      btn.removeClass('active');
+      $(this).addClass('active');
+    });
+  });
+  //クリックしたらline-through
+  // $('.far.fa-circle').on('click', function () {
+  //   $('.far.fa-circle').toggleClass('contents_content_task_done');
+  // });
+  //クリックしたらline-throughが削除
   
+    // #div1をdrag可能に
+  
+  var reloadTasks = function() {
+    var last_task_id = $('.contents_content:last').data("task-id");
+    $.ajax({
+      url: "api/tasks",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_task_id}
+    })
+    .done(function(tasks) {
+      if (tasks.length !==0){
+        var insertHTML = '';
+        $.each(tasks, function(i, task){   
+          insertHTML += buildHTML(task)
+        })
+          $(".contents").append(insertHTML);
+          $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+      }      
+    })
+
+    .fail(function() {
+      alert('error');
+    })
+  }
+  if (document.location.href.match(/\/groups\/\d+\/tasks/)) {
+    setInterval(reloadTasks, 7000);
+  }
 });
 

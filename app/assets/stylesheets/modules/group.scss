@@ -1,8 +1,27 @@
 h1 {
   letter-spacing: 2px;
-  font-size: 24px;
   font-weight: bold;
   text-align: center;
+  font-style: italic;
+}
+
+span{
+  color: orange;
+  font-size: 36px;
+  font-family: "Holtwood One SC";
+}
+
+label.group-header{
+  font-family: "Holtwood One SC";
+  margin-left: 5px;
+  font-size: 24px;
+
+}
+
+label.new_group{
+  font-family: "Holtwood One SC";
+  margin-left: 5px;
+  font-size: 24px;
 }
 h2 {
   margin-bottom: 10px;
@@ -25,10 +44,10 @@ li {
 
 
 .chat-group-form {
-  width: 980px;
-  margin: 60px auto;
-  padding: 40px;
-  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px 300px;
+  background-color:rgba(221, 221, 221, 0.8);
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
@@ -44,13 +63,16 @@ li {
     line-height: 50px;
     font-weight: bold;
     text-align: right;
+    font-style: italic;
   }
   &__input {
     float: left;
-    width: 100%;
+    width: 60%;
     line-height: 30px;
     padding: 10px 15px;
     box-sizing: border-box;
+    border: 3px solid gray;
+    border-radius: 20px;
   }
   &__action-btn {
     display: inline-block;
@@ -84,7 +106,8 @@ li {
   padding: 0 15px;
   line-height: 50px;
   font-size: 14px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid white;
+  width: 60%;
   &:after {
     content: "";
     clear: both;
@@ -97,11 +120,29 @@ li {
     float: right;
     display: inline-block;
     cursor: pointer;
+    font-style: italic;
     &--add {
-      color: #38aef0;
+      color: #ff6347;
+      font-weight: bold;
     }
     &--remove {
-      color: #f05050;
+      color: #ff6347;
+      font-weight: bold;
+
     }
   }
+}
+
+.chat-group-form__action-btn{
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  border-radius: 20px;
+  background-color: orange; 
+  cursor: pointer;
+}
+
+.chat-group-form__action-btn[value="更新する"]{
+  position: relative;
+  margin-left: 20px;
 }

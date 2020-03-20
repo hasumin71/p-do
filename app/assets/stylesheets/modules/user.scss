@@ -1,8 +1,13 @@
 .account-page {
+  .account-page__inner.clearfix{
+    margin-left: 230px;
+    background-color: rgba(255, 255, 255,  0.8)
+  }
   .account-page__inner {
     width: 980px;
     margin: 60px auto;
     padding: 60px;
+   
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -20,6 +25,7 @@
 
   .account-page__header {
     h2 {
+      font-family: "Holtwood One SC";
       margin-bottom: 10px;
       letter-spacing: 3px;
       font-size: 40px;
@@ -30,7 +36,7 @@
         display: block;
         width: 60px;
         margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
+        border-bottom: 1px solid orange;
       }
     }
 

@@ -19,8 +19,8 @@
         .contents_content
           .contents_content_task 
             = task.content    
-            -if current_user.id == task.user_id  
-              = link_to "","tasks/#{task.id}", method: :delete, class:"fa fa-trash"
+            -# -if current_user.id == task.user_id  
+            -#   = link_to "","tasks/#{task.id}", method: :delete, class:"fa fa-trash"
           .contents_content_user
             = task.user.name
           .contents_content_time

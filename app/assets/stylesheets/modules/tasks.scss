@@ -12,7 +12,6 @@ a{
   border-bottom: 3px solid orange;
   position: fixed;
   z-index: 10;
-  top: 0;
   background-color:rgba(63,63,63,0.8);
   
   &_box{
@@ -31,7 +30,7 @@ a{
               0px 1px 0 orange,  0 -1px 0 orange,
               -1px 0 0 orange, 1px 0 0 orange;
       font-size: 55px;
-      // font-weight: bold;
+      
     }
     &_both{
       width : 80%;
@@ -91,6 +90,7 @@ a{
   background-size: cover;
   position:relative;
   .side-bar {
+    height: 100%;
     width: 15%;
     background-image: url("groupee.jpg");
     background-size: cover;
@@ -100,8 +100,8 @@ a{
       // position: relative;
       height:80%;
       width: 80%;
-      margin-top: 115px;
-      margin-left: 30px;
+      margin-top: 109px;
+      margin-left: 15px;
       a{
         text-decoration: none;
         color: black ;
@@ -110,21 +110,36 @@ a{
       }
       .group{
         margin-bottom: 10px;
+        background-color: rgba(255, 255, 255,0.8);
+        width: 180px;
+        padding: 10px;
+        border-radius: 10px;
         color:black;
+        position: relative;
+        border-bottom: 3px solid gray ; 
         &_task{
-          color:#ff7f50;
-        }
+          color:orange;
+          border-radius: 5px;
+          padding-left: 5px;
+          font-style: italic;
+          transform   : skewX(-5deg);  
+          &_new{
+            color:#ff7575;
+            font-style: normal;
+            font-size: 13px;
+          }
+        }  
+        
         &_name:hover{
           color: gray;
         }
       }  
-      
     }
   }
   .main-tasks {
     width: 85%;
     margin-top: 100px;
-    height: 87.5%;
+    height: 80%;
 
     .fa-angle-double-right.icon{
       position:relative;
@@ -138,6 +153,7 @@ a{
       color: white;
       font-size: 15px;
       display:flex;
+      width: 80%;
       
       &_member{
         margin-left: 10px;
@@ -175,24 +191,42 @@ a{
       overflow: scroll;
       
       &_content{
-        // padding: 30px;
-        width: 99%;
-        // height: 4.2%;
         background-color: rgba(255, 255, 255,0.9);
-        border-radius: 10px;
+        border-radius: 20px;
         opacity: 0.85;
-        margin-bottom: 1px;
         font-size: 25px;
         font-weight: bold;
         display: flex;
+        border-bottom: 6px solid gray ; 
+      &_content#done{
+        
+      }  
         
         .content1 {
           position: relative;
           margin-right: 15px;
           bottom: 8px;
         }
+
+        .fa-circle{
+          color: gray;
+        }
+
+        .fa-check-circle{
+          color: orange;
+        }
+
+        
+        .fa-circle:hover{
+          color: orange;
+          cursor: pointer;
+        }
         &_task{
           margin: 10px 0 10px 20px;
+          
+        }
+        &_task_done{
+          text-decoration:line-through;
         }
         
         
@@ -217,10 +251,9 @@ a{
           color:gray;
           cursor: pointer;
           position: relative;
-          bottom: 1px;
-          margin:0 5px 0 5px;
+          top: 17px;
           size: 5px;
-          
+          margin-left: 10px;
         }
         .fa-trash:hover{
           color:#add8e6;

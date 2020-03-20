@@ -1,3 +1,7 @@
-.chat-group-form
-  %h1 チャットグループ編集
-  = render partial: 'form', locals: { group: @group }
+.wrapper
+  .chat-group-form
+    %h1 
+      %span SURU 
+      %label.group-header group_edit
+      
+      = render partial: 'form', locals: { group: @group }

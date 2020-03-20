@@ -71,3 +71,5 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'devise'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'ranked-model'

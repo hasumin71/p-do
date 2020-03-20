@@ -8,21 +8,22 @@
       Members :
       - @group.users.each do |user|
         = link_to user.name, "users/#{user.id}", class:""
+        
         -# = user.name
         
   .contents
     - @tasks.each do |task|
-      .contents_content
+      .contents_content{data: {task: {id: task.id}}}
         .contents_content_task 
-          -if current_user.id == task.user_id 
-            -# = check_box :task, :done, {class: "check_box"}, true, false
+          -if current_user.id == task.user_id           
+            -# %i.far.fa-circle
           = task.content    
-          -if current_user.id == task.user_id  
-            = link_to "","tasks/#{task.id}", method: :delete, class:"fa fa-trash"
         .contents_content_user
           = task.user.name
         .contents_content_time
-          = task.created_at.strftime("%Y年%m月%d日 %H時%M分")
+          = task.created_at.strftime("%Y/%m/%d/%H:%M")
+        -if current_user.id == task.user_id  
+          = link_to "","tasks/#{task.id}", method: :delete, class:"fa fa-trash"
   .form
     = form_for [@group, @task] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a text'
@@ -30,4 +31,4 @@
 
 
 -# = link_to "", group_task_path(task), method: :delete, class:"fa fa-trash"
--# -if user_signed_in? current_user.id == task.user_id
+-# -if user_signed_in? current_user.id == task.user_id´

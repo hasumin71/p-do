@@ -31,6 +31,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    tasks = @user.tasks 
+  end  
+
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
