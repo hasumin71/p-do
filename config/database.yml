@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: p-do_production
-  username: p-do
-  password: <%= ENV['P-DO_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
