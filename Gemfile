@@ -73,3 +73,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
