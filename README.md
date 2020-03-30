@@ -1,13 +1,13 @@
 # SURU。
 * グループチャットのようなtodoアプリを作成しました.
-* グループに所属したユーザーが、コメント投稿(todo)&削除することができ、グループに所属するメンバーのコメント一覧を見ることができます。
+* グループに所属したユーザーが、コメント投稿(todo)&コメントを削除することができ、グループに所属するメンバーのコメント一覧を見ることができます。
 * 制作期間：約2週間
 
 # 開発の動機
-* twitterのような感覚で、友達に対して、todoを気楽に書けるフィールドを作りたいと思い、開発に至りました。
+* twitterのような感覚で、todoを気楽に書いて友達と励まし合えるフィールドを作りたいと思い、開発に至りました。
 
 # アプリ名の由来
-* 「~する。」のSURUです。「。」は句読点であり、〇ー〇〇グ娘"。"のようなポップな印象を持たせようと付与しました。
+* 「~する。」のSURUです。「。」は句読点であり、〇ー〇〇グ娘"。"のようにポップな印象を持たせようと思い付与しました。
 
 # リンク
 * https://serene-thicket-87015.herokuapp.com
@@ -31,13 +31,13 @@
 
 # 活用方法
 # ①グループ編集
-* 左サイドバーの所属group選択後、右側にコメント欄上部、グループ名横にアイコンが表示されます。それをクリックしていただくとグループ編集ページに遷移します。そこでグループ名編集、メンバーを追加&削除することができます。以下のgifを参考にしてください。
+* 左サイドバーの所属group選択後、右側のコメント欄上部、グループ名横にアイコンが表示されます。それをクリックしていただくとグループ編集ページに遷移します。そこでグループ名編集、メンバーを追加&削除することができます。以下のgifを参考にしてください。
 * ![df7b8f615a188632d4ed5ba35adbfe0e](https://user-images.githubusercontent.com/60636877/77875662-b8858480-728b-11ea-89bb-96db3d234a2d.gif)
 
 
 
 # ②コメント&削除
-* コメント欄下部からコメントを投稿できます。投稿されたコメントのダストアイコンをクリックしていただくとコメントを削除できます。以下のgifを参考にしてください
+* コメント欄下部からコメントを投稿できます。投稿されたコメントのゴミ箱アイコンをクリックしていただくとコメントを削除できます。以下のgifを参考にしてください
 * ![2f265a21d95cc1dce2f7fe6461fb9aba](https://user-images.githubusercontent.com/60636877/77875767-01d5d400-728c-11ea-8d35-36884ace66e1.gif)
 
 
@@ -49,91 +49,46 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|email|string|null: false, unique: true|
+|name|string|null: false|
+|email|string|null: false|
 |password|string|null: false|
-|encrypted_password|string|null: false|
 
 ### Association
-- has_one :profile
-- has_one :creditcard
-- has_many :products
+- has_many :tasks
+- has_many :groups, through::users_groups
+- has_many :users_groups
 
 
-## profilesテーブル
+## tasksテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|lastname|string|null: false|
-|lastname_kana|string|null: false|
-|firstname|string|null: false|
-|firstname_kana|string|null: false|
-|birthday|date|null: false|
-|postal_code|string|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|address|string|null: false|
-|building|string||
-|tel|string||
-
+|content|text|
+|user_id|integer|null: false,foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
+- belongs_to :group
 
 
-## creditcardsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|card_id|integer|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
-|customer_id|integer|null: false, foreign_key: true|
-
-
-### Association
-- belongs_to :user
-
-
-## productsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user|references|null: false,foreign_key: true|
-|brand|string|
-|item_name|string|null: false|
-|item_detail|text|null: false|
-|item_size|string||
-|condition_id|references|null: false,foreign_key: true|
-|price|integer|null: false|
-|category_id|references|null: false,foreign_key: true|
-|delivery_pay_id|references|null: false,foreign_key: true|
-|prefecture_id|references|null: false,foreign_key: true|
-|lead_time|string|null: false|
-|ststus|integer|null: false|
-
-
-
-### Association
-- belongs_to :user
-- belongs_to :category
-- has_many :images
-
-
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-|product|references|null: false, foreign_key: true|
-
-
-### Association
-- belongs_to :product
-
-
-## categorysテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|integer||
 
 
 ### Association
-- has_many :products
+- has_many :users,through: users_groups
+- has_many :tasks
+- has_many :users_groups
+
+## group_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false,foreign_key: true|
+|group_id|integer|null: false,foreign_key: true|
+
+
+### Association
+- belongs_to :group
+- belongs_to :user
