@@ -32,7 +32,7 @@
 # 活用方法
 # ①グループ編集
 * 左サイドバーの所属group選択後、右側にコメント欄上部、グループ名横にアイコンが表示されます。それをクリックしていただくとグループ編集ページに遷移します。そこでグループ名編集、メンバーを追加&削除することができます。以下のgifを参考にしてください。
-* ![Image from Gyazo](https://i.gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e.gif)](https://gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e)
+* ![https://i.gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e.gif](https://gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e)
 
 
 # ②コメント&削除
