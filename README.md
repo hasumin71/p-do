@@ -32,16 +32,16 @@
 # 活用方法
 # ①グループ編集
 * 左サイドバーの所属group選択後、右側にコメント欄上部、グループ名横にアイコンが表示されます。それをクリックしていただくとグループ編集ページに遷移します。そこでグループ名編集、メンバーを追加&削除することができます。以下のgifを参考にしてください。
-* [![Image from Gyazo](https://i.gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e.gif)](https://gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e)
+* ![Image from Gyazo](https://i.gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e.gif)](https://gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e)
 
 
 # ②コメント&削除
 * コメント欄下部からコメントを投稿できます。投稿されたコメントのダストアイコンをクリックしていただくとコメントを削除できます。以下のgifを参考にしてください
-* [![Image from Gyazo](https://i.gyazo.com/2f265a21d95cc1dce2f7fe6461fb9aba.gif)](https://gyazo.com/2f265a21d95cc1dce2f7fe6461fb9aba)
+* ![Image from Gyazo](https://i.gyazo.com/2f265a21d95cc1dce2f7fe6461fb9aba.gif)](https://gyazo.com/2f265a21d95cc1dce2f7fe6461fb9aba)
 
 # ③グループに所属するメンバーのコメント一覧。
 * グループ名横のオレンジで囲まれた各メンバーをクリックしていただくと、メンバーのコメント一覧を見ることができます。
-* [![Image from Gyazo](https://i.gyazo.com/c363bba660080ba63118c8f97ba66547.gif)](https://gyazo.com/c363bba660080ba63118c8f97ba66547)
+* ![Image from Gyazo](https://i.gyazo.com/c363bba660080ba63118c8f97ba66547.gif)](https://gyazo.com/c363bba660080ba63118c8f97ba66547)
 
 ## usersテーブル
 |Column|Type|Options|
