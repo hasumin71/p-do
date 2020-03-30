@@ -6,7 +6,7 @@
 # 開発の動機
 * twitterのような感覚で、友達に対して、todoを気楽に書けるフィールドを作りたいと思い、開発に至りました。
 
-# アプリ名(SURU。)の由来
+# アプリ名の由来
 * 「~する。」のSURUです。「。」は句読点であり、〇ー〇〇グ娘"。"のようなポップな印象を持たせようと付与しました。
 
 # リンク
@@ -32,16 +32,19 @@
 # 活用方法
 # ①グループ編集
 * 左サイドバーの所属group選択後、右側にコメント欄上部、グループ名横にアイコンが表示されます。それをクリックしていただくとグループ編集ページに遷移します。そこでグループ名編集、メンバーを追加&削除することができます。以下のgifを参考にしてください。
-* ![https://i.gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e.gif](https://gyazo.com/df7b8f615a188632d4ed5ba35adbfe0e)
+* ![df7b8f615a188632d4ed5ba35adbfe0e](https://user-images.githubusercontent.com/60636877/77875662-b8858480-728b-11ea-89bb-96db3d234a2d.gif)
+
 
 
 # ②コメント&削除
 * コメント欄下部からコメントを投稿できます。投稿されたコメントのダストアイコンをクリックしていただくとコメントを削除できます。以下のgifを参考にしてください
-* ![Image from Gyazo](https://i.gyazo.com/2f265a21d95cc1dce2f7fe6461fb9aba.gif)](https://gyazo.com/2f265a21d95cc1dce2f7fe6461fb9aba)
+* ![2f265a21d95cc1dce2f7fe6461fb9aba](https://user-images.githubusercontent.com/60636877/77875767-01d5d400-728c-11ea-8d35-36884ace66e1.gif)
+
 
 # ③グループに所属するメンバーのコメント一覧。
 * グループ名横のオレンジで囲まれた各メンバーをクリックしていただくと、メンバーのコメント一覧を見ることができます。
-* ![Image from Gyazo](https://i.gyazo.com/c363bba660080ba63118c8f97ba66547.gif)](https://gyazo.com/c363bba660080ba63118c8f97ba66547)
+* ![c363bba660080ba63118c8f97ba66547](https://user-images.githubusercontent.com/60636877/77875568-6f353500-728b-11ea-9c0e-091bccd4d435.gif)
+
 
 ## usersテーブル
 |Column|Type|Options|
