@@ -47,22 +47,6 @@ $(function(){
       return false;
   })
 
-
-  $(function(){
-    var btn = $('button');
-    btn.click(function(){
-      btn.removeClass('active');
-      $(this).addClass('active');
-    });
-  });
-  //クリックしたらline-through
-  // $('.far.fa-circle').on('click', function () {
-  //   $('.far.fa-circle').toggleClass('contents_content_task_done');
-  // });
-  //クリックしたらline-throughが削除
-  
-    // #div1をdrag可能に
-  
   var reloadTasks = function() {
     var last_task_id = $('.contents_content:last').data("task-id");
     $.ajax({
@@ -86,6 +70,7 @@ $(function(){
       alert('error');
     })
   }
+
   if (document.location.href.match(/\/groups\/\d+\/tasks/)) {
     setInterval(reloadTasks, 7000);
   }
